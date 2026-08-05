@@ -1,4 +1,4 @@
-# Pill-Management-System
+# 💊 Pill-Management-System
 A Python-based medication management system that allows users to manage pills, track intake times, and maintain medication logs.
 
 ## 🧩 Features
@@ -40,6 +40,70 @@ Pill-Management-System/
 └── README.md
     └── Project documentation
 ```
+
+## 📋 Requirements
+
+- Python 3 installed on your computer
+
+No external libraries are required.
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/Pill-Management-System.git
+```
+
+### 2. Navigate into the project folder
+
+```bash
+cd Pill-Management-System
+```
+
+### 3. Run the program
+
+### macOS / Linux
+
+```bash
+python3 PillTracker.py
+```
+
+### Windows
+
+```bash
+python PillTracker.py
+```
+
+---
+
+## ▶️ Usage
+
+After launching the program, use the menu options:
+
+### Pill Management
+
+Allows users to:
+- Add pills
+- Remove pills
+- View current pills
+
+### Time Management
+
+Allows users to:
+- Log when a pill was taken
+- Remove the most recent log
+- View medication history
+- View the latest medication entry
+
+The application stores data using text files:
+
+- `pills.txt` → Stores saved medications
+- `times.txt` → Stores medication history
+
+---
 
 ## 📚 What I Learned
 
