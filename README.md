@@ -111,6 +111,10 @@ The application stores data using text files:
 
 <img width="3420" height="1764" alt="pill" src="https://github.com/user-attachments/assets/15f44673-b0c0-4313-9820-19b2c2263a2a" />
 
+### A demonstration of the time management features:
+
+<img width="3420" height="1760" alt="time" src="https://github.com/user-attachments/assets/89d9d8e9-fb2d-4bf7-9f98-5f5297379fdf" />
+
 ## 📚 What I Learned
 
 Through building this project, I gained experience with:
