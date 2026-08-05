@@ -18,14 +18,35 @@ class TimeManagement:
 
     def logTime(self, time, pill, date):
         
-        dateObj = datetime.strptime(date, "%m%d%Y")
-        date = dateObj.strftime("%m/%d/%Y")
+        try:
+            dateObj = datetime.strptime(date, "%m%d%Y")
+        except ValueError:
+            print("Incorrect Format!")
+            return
+        
+        try:
+            date = dateObj.strftime("%m/%d/%Y")
+        except ValueError:
+            print("Incorrect Format!")
+            return
 
-        timeObj = datetime.strptime(time, "%I%M %p")
-        time = timeObj.strftime("%I:%M %p")
+        try:
+            timeObj = datetime.strptime(time, "%I%M %p")
+        except ValueError:
+            print("Incorrect Format!")
+            return
 
-        with open("pills.txt", "r") as file:
-            pills = file.read().splitlines()
+        try:
+            time = timeObj.strftime("%I:%M %p")
+        except ValueError:
+            print("Incorrect Format!")
+            return
+
+        try:
+            with open("pills.txt", "r") as file:
+                pills = file.read().splitlines()
+        except FileNotFoundError:
+            pills = []
 
         if pill in pills:
 
@@ -36,8 +57,11 @@ class TimeManagement:
 
         
     def removeTime(self):
-        with open("times.txt", "r") as file:
-            log = file.read().splitlines()
+        try:
+            with open("times.txt", "r") as file:
+                log = file.read().splitlines()
+        except FileNotFoundError:
+            log = []
 
         if log:
             log.pop()
@@ -45,21 +69,25 @@ class TimeManagement:
             print("File Is Empty!")
 
         with open("times.txt", "w") as file:
-            file.write("\n".join(log))
+            file.write("\n".join(log) + "\n")
 
 
     def seeLog(self):
-        with open("times.txt", "r") as file:
-            print(file.read())
+        try:
+            with open("times.txt", "r") as file:
+                print(file.read())
+        except FileNotFoundError:
+            print("File Does Not Exist!")
 
 
     def recentLog(self):
-        with open("times.txt", "r") as file:
-            log = file.read().splitlines()
+        try:
+            with open("times.txt", "r") as file:
+                log = file.read().splitlines()
+        except FileNotFoundError:
+            log = []
         
         if log:
             print(log[-1])
         else:
             print("File Is Empty!")
-
-    
