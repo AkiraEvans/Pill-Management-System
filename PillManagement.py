@@ -16,8 +16,11 @@ class PillManagement:
 
 
     def addPill(self, pill):
-        with open("pills.txt", "r") as file:
-            pills = file.read().splitlines()
+        try:
+            with open("pills.txt", "r") as file:
+                pills = file.read().splitlines()
+        except FileNotFoundError:
+            pills = []
             
         if pill not in pills:
             with open("pills.txt", "a") as file:
@@ -29,13 +32,19 @@ class PillManagement:
     def updatePill(self):
         print("Updated Pills: ")
 
-        with open("pills.txt", "r") as file:
-            print(file.read())
+        try:
+            with open("pills.txt", "r") as file:
+                print(file.read())
+        except FileNotFoundError:
+            print("No Pills Found In File!")
 
 
     def removePill(self, pill):
-        with open("pills.txt", "r") as file:
-            pills = file.read().splitlines()
+        try:
+            with open("pills.txt", "r") as file:
+                pills = file.read().splitlines()
+        except FileNotFoundError:
+            pills = []
 
         if pill in pills:
             pills.remove(pill)
@@ -47,5 +56,8 @@ class PillManagement:
 
 
     def seePills(self):
-        with open("pills.txt", "r") as file:
-            print(file.read())
+        try:
+            with open("pills.txt", "r") as file:
+                print(file.read())
+        except FileNotFoundError:
+            print("File Does Not Exist!")
