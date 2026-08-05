@@ -6,7 +6,7 @@
 from PillManagement import PillManagement
 from TimeManagement import TimeManagement
 
-class PillTracker(PillManagement):
+class PillTracker:
 
     def __init__(self):
         self.time = TimeManagement()
@@ -30,10 +30,10 @@ class PillTracker(PillManagement):
 
             if choice == 1:
                 
-                PillManagement.pillMenu(self)
+                self.pillMenu()
 
             elif choice == 2:
-                TimeManagement.timeMenu(self)
+                self.timeMenu()
 
             elif choice == 3:
                 print("\nSuccessfully Exited Program!")
@@ -45,7 +45,7 @@ class PillTracker(PillManagement):
 
     def pillMenu(self):
             
-        PillManagement.pillMenu(self)
+        self.pill.pillMenu()
 
         try:
             choicePill = int(input("\nChoose Number: "))
@@ -54,17 +54,17 @@ class PillTracker(PillManagement):
             return
 
         if choicePill == 1:
-            pill = input("\nInsert Pill To Add: ").upper()
-            self.addPill(pill)
-            self.updatePill()
+            pill = input("\nInsert Pill To Add: ").upper().strip()
+            self.pill.addPill(pill)
+            self.pill.updatePill()
 
         elif choicePill == 2:
-            pill = input("\nInsert Pill To Remove: ").upper()
-            self.removePill(pill)
-            self.updatePill()
+            pill = input("\nInsert Pill To Remove: ").upper().strip()
+            self.pill.removePill(pill)
+            self.pill.updatePill()
 
         elif choicePill == 3:
-            self.seePills()
+            self.pill.seePills()
 
         else:
             print("Not A Menu Option!")
@@ -81,7 +81,7 @@ class PillTracker(PillManagement):
             return
 
         if timeChoice == 1:
-            pill = input("\nInsert Pill To Log Time For: ").upper()
+            pill = input("\nInsert Pill To Log Time For: ").upper().strip()
             time = input("Insert Time Pill Was Taken (HHMM AM/PM): ")
             date = (input("Insert The Date Pill Taken (MMDDYYYY): "))
 
