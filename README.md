@@ -105,6 +105,12 @@ The application stores data using text files:
 
 ---
 
+## 🎥 Demo
+
+### A demonstration of the pill management features:
+
+<img width="3420" height="1764" alt="pill" src="https://github.com/user-attachments/assets/15f44673-b0c0-4313-9820-19b2c2263a2a" />
+
 ## 📚 What I Learned
 
 Through building this project, I gained experience with:
