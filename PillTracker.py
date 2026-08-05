@@ -1,3 +1,8 @@
+# Author: Akira Evans
+# Project: Pill Management System
+# Created: July 21, 2026
+# Description: Handles medication tracking and pill management.
+
 from PillManagement import PillManagement
 from TimeManagement import TimeManagement
 
